@@ -5,6 +5,11 @@
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
 [![Go Reference](https://pkg.go.dev/badge/github.com/RewithSolo/arcana-gate.svg)](https://pkg.go.dev/github.com/RewithSolo/arcana-gate)
 > **Arcana Gate** is a deterministic, fate-driven quality gate CLI tool and native GitHub Action. It delegates deployment decisions to Tarot Major Arcana, turning release engineering into an art of divine intervention.
+<p align="center">
+  <img src="assets/demo.png" alt="Arcana Gate Step Summary Negative Preview" width="48%"/>
+  <img src="assets/demo_positive.png" alt="Arcana Gate Step Summary Positive Preview" width="48%"/>
+</p>
+
 ---
 ## 🎭 The Core Concept & Irony
 In modern DevOps, engineering teams spend hundreds of hours configuring static analyzers, flaky e2e tests, and canary rollouts. **Arcana Gate** introduces the ultimate release circuit breaker: **let higher powers decide if your code belongs in production.**
