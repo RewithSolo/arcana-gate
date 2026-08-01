@@ -1,8 +1,9 @@
 # 🔮 Arcana Gate
-[![CI/CD Pipeline](https://github.com/RewithSolo/arcana-gate/actions/workflows/pipeline.yml/badge.svg)](https://github.com/RewithSolo/arcana-gate/actions/workflows/pipeline.yml)
-[![Go Report Card](https://goreportcard.com/badge/github.com/RewithSolo/arcana-gate)](https://goreportcard.com/report/github.com/RewithSolo/arcana-gate)
-[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
-[![Go Version](https://img.shields.io/github/go-mod/go-version/RewithSolo/arcana-gate)](https://go.dev/)
+[![CI/CD Pipeline](https://github.com/RewithSolo/arcana-gate/actions/workflows/pipeline.yml/badge.svg)](https://github.com/RewithSolo/arcana-gate/actions)
+[![Latest Release](https://img.shields.io/github/v/release/RewithSolo/arcana-gate?color=blue)](https://github.com/RewithSolo/arcana-gate/releases)
+[![Go Version](https://img.shields.io/github/go-mod/go-version/RewithSolo/arcana-gate)](https://golang.org/)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
+[![Go Reference](https://pkg.go.dev/badge/github.com/RewithSolo/arcana-gate.svg)](https://pkg.go.dev/github.com/RewithSolo/arcana-gate)
 > **Arcana Gate** is a deterministic, fate-driven quality gate CLI tool and native GitHub Action. It delegates deployment decisions to Tarot Major Arcana, turning release engineering into an art of divine intervention.
 ---
 ## 🎭 The Core Concept & Irony
