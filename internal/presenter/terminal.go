@@ -35,7 +35,7 @@ func (p *TerminalPresenter) Render(res *domain.GateResult) error {
 		statusColor = colorRed
 	}
 
-	positionText := string(res.DrawnCard.Position)
+	var positionText string
 	if res.DrawnCard.Position == domain.Reversed {
 		positionText = "REVERSED"
 	} else {
