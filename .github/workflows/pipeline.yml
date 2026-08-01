@@ -5,8 +5,18 @@ on:
     branches: [ main ]
     tags:
       - 'v*'
+    paths-ignore:
+      - '**.md'
+      - 'docs/**'
+      - 'LICENSE'
+      - '.gitignore'
   pull_request:
     branches: [ main ]
+    paths-ignore:
+      - '**.md'
+      - 'docs/**'
+      - 'LICENSE'
+      - '.gitignore'
 
 permissions:
   contents: write
@@ -114,3 +124,28 @@ jobs:
           args: release --clean
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        
+  # Stage 5: Telegram notification
+  telegram-notification:
+    name: 📱 Telegram Alert
+    runs-on: ubuntu-latest
+    needs: [test-and-lint, sast-scan, container-security, release]
+    if: always()
+    steps:
+      - name: Send Telegram Notification
+        uses: appleboy/telegram-action@master
+        with:
+          to: ${{ secrets.TELEGRAM_TO }}
+          token: ${{ secrets.TELEGRAM_TOKEN }}
+          format: markdown
+          message: |
+            🛡️ *DevSecOps Pipeline Status*
+            
+            🔹 *Repository:* `${{ github.repository }}`
+            🔹 *Branch/Tag:* `${{ github.ref_name }}`
+            🔹 *Commit:* `${{ github.sha }}`
+            
+            📊 *Pipeline Status:* ${{ (needs.test-and-lint.result == 'success' && needs.sast-scan.result == 'success' && needs.container-security.result == 'success' && needs.release.result != 'failure') && '✅ SUCCESS' || '❌ FAILED' }}
+            🚀 *Release / Deploy:* ${{ needs.release.result == 'success' && '✅ Published' || (needs.release.result == 'skipped' && '⏩ Skipped (No Tag)' || '❌ Failed') }}
+            
+            🔗 [View Workflow Run](https://github.com/${{ github.repository }}/actions/runs/${{ github.run_id }})
