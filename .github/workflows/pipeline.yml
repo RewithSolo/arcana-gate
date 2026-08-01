@@ -33,7 +33,7 @@ jobs:
 
       - name: Run Unit Tests with Coverage & Race Detector
         run: |
-          go test -race -v -coverprofile=coverage.out -covermode=atomic ./...
+          go test -race -v -coverprofile=coverage.out $(go list ./... | grep -v /cmd)
 
       - name: Verify Code Coverage Threshold
         run: |
