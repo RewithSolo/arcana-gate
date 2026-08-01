@@ -1,0 +1,28 @@
+name: 'Arcana CI Gate'
+description: 'Deterministic fate-based quality gate for CI/CD pipelines using Tarot Arcana.'
+author: 'RewithSolo'
+branding:
+  icon: 'shield'
+  color: 'purple'
+
+inputs:
+  seed:
+    description: 'Deterministic seed for divination (defaults to GITHUB_SHA)'
+    required: false
+    default: '${{ github.sha }}'
+  strict:
+    description: 'Enable strict mode where all reversed cards result in a BLOCK'
+    required: false
+    default: 'false'
+  deck:
+    description: 'Path to custom YAML deck file'
+    required: false
+    default: ''
+
+runs:
+  using: 'docker'
+  image: 'Dockerfile'
+  env:
+    ARCANA_SEED: ${{ inputs.seed }}
+    ARCANA_STRICT: ${{ inputs.strict }}
+    ARCANA_DECK_PATH: ${{ inputs.deck }}
