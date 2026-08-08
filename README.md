@@ -95,6 +95,12 @@ echo $?
 | **The World** | ✅ PASS | ✅ PASS | **Microservice Synergy.** Green telemetry across all Kubernetes pods and service meshes. |
 | **The Fool** | ✅ PASS | ❌ BLOCK | **YOLO Deploy.** Upright represents bold innovation; Reversed warns against untested Friday evening releases. |
 
+## 📊 Markdown Summary Report
+
+<p align="center">
+  <img src="assets/demo_summary.png" alt="Arcana Gate Step Summary Preview" width="80%"/>
+</p>
+
 ## 🛠 Project Layout & Architecture
 Designed in accordance with **Standard Go Project Layout** and Clean Architecture principles:
 ```text
