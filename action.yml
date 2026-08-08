@@ -29,7 +29,7 @@ runs:
 
     - name: Build Go binary
       shell: bash
-      run: go build -o arcana-gate .
+      run: go build -o arcana-gate ./cmd/arcana-gate
 
     - name: Run Arcana Gate
       shell: bash
