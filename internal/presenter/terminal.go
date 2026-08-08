@@ -60,7 +60,7 @@ func (p *TerminalPresenter) Render(res *domain.GateResult) error {
 	sb.WriteString(fmt.Sprintf(" │ %s │ \n", centerText(res.DrawnCard.Card.Name, 38)))
 	sb.WriteString(fmt.Sprintf(" │ %s │ \n", centerText("["+positionText+"]", 38)))
 	sb.WriteString(" │                                        │ \n")
-	sb.WriteString(fmt.Sprintf(" │%s%s%s%s%s │ \n", labelPrefix, statusColor+colorBold, statusStr, colorReset, statusPadding))
+	sb.WriteString(fmt.Sprintf(" │%s%s%s%s%s  │ \n", labelPrefix, statusColor+colorBold, statusStr, colorReset, statusPadding))
 	sb.WriteString(" └────────────────────────────────────────┘ \n")
 	sb.WriteString(fmt.Sprintf("%sDetails:%s %s\n", colorYellow, colorReset, res.Reason))
 	sb.WriteString(fmt.Sprintf("%sMeaning:%s %s\n", colorCyan, colorReset, res.DrawnCard.Card.Description))
